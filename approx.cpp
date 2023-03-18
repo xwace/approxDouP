@@ -133,6 +133,7 @@ namespace APPROX{
 
                 CV_Assert( dx != 0 || dy != 0 );
 
+                //循环找到最高的点,作为分界点right_slice.start
                 while( pos != slice.end )
                 {
                     READ_PT(pt, pos);
@@ -160,10 +161,11 @@ namespace APPROX{
             }
             else
             {
+                //分治前:slice = [left, right]
+                //找到分界点right.start开始分两拨: slice = left, right.end赋值
                 right_slice.end = slice.end;
                 slice.end = right_slice.start;
 
-                cout<<"slice: "<<slice<<endl;
                 PUSH_SLICE(right_slice);
                 PUSH_SLICE(slice);
             }
