@@ -136,7 +136,7 @@ namespace APPROX{
                 //循环找到最高的点,作为分界点right_slice.start
                 while( pos != slice.end )
                 {
-                    READ_PT(pt, pos);
+                    READ_PT(pt, pos);//pos++递增遍历
                     dist = fabs((pt.y - start_pt.y) * dx - (pt.x - start_pt.x) * dy);
 
                     if( dist > max_dist )
