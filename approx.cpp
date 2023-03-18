@@ -146,6 +146,7 @@ namespace APPROX{
                     }
                 }
 
+                //le_eps是less or equal than: <=
                 le_eps = max_dist * max_dist <= eps * (dx * dx + dy * dy);
             }
             else
