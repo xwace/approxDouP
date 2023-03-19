@@ -204,6 +204,7 @@ namespace APPROX{
                 successive_inner_product >= 0 )//三点组成的角不为锐角时,中点太矮,删除
             {
                 new_count--;//记录dst_contour的长度,删除一个元素,长度-1
+                //wpos 是 write position
                 dst_contour[wpos] = start_pt = end_pt;
                 if(++wpos >= count) wpos = 0;
                 READ_DST_PT(pt, pos);
